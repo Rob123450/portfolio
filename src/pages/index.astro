@@ -35,29 +35,34 @@ import Card from '../components/Card.astro';
 		</svg> -->
 		<h1><span class="text-gradient">Welcome</span></h1>
 		<p class="welcome-message">Test message</p>
-		
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+		<div class="project">
+			<ul role="list" class="link-card-grid">
+				<Card
+					href="https://docs.astro.build/"
+					title="Documentation"
+					body="Learn how Astro works and explore the official API docs."
+					image="None"
+				/>
+				<Card
+					href="https://astro.build/integrations/"
+					title="Integrations"
+					body="Supercharge your project with new frameworks and libraries."
+					image="IMG_1947.JPG"
+				/>
+				<Card
+					href="https://astro.build/themes/"
+					title="Themes"
+					body="Explore a galaxy of community-built starter themes."
+					image="IMG_1947.JPG"
+				/>
+				<Card
+					href="https://astro.build/chat/"
+					title="Community"
+					body="Come say hi to our amazing Discord community. ❤️"
+					image="None"
+				/>
+			</ul>
+		</div>
 	</main>
 </Layout>
 
@@ -71,15 +76,6 @@ import Card from '../components/Card.astro';
 		font-size: 20px;
 		line-height: 1.6;
 	}
-	/* .astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	} */
 	h1 {
 		font-size: 4rem;
 		font-weight: 700;
@@ -112,11 +108,28 @@ import Card from '../components/Card.astro';
 	.instructions strong {
 		color: rgb(var(--accent-light));
 	}
+	/* Handles the grid layout for the projects
+	   TODO: Figure out how to get the grids to resize according to viewport size
+	*/
 	.link-card-grid {
+		margin: 0 auto 6rem;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		position: relative;
+		grid-template-columns: repeat(3, 1fr);
+		width: 100%;
+		height: auto;
 		gap: 2rem;
-		padding: 5rem 1rem;
+		padding: 5rem 0rem;
+		overflow: hidden;
+	}
+	.project {
+		display: block;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 3rem 1rem;
 	}
 	.welcome-message {
 		text-align: center;
