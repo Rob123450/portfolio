@@ -12,26 +12,26 @@ import Card from '../components/Card.astro';
 				href="https://docs.astro.build/"
 				title="Documentation"
 				body="Learn how Astro works and explore the official API docs."
-				image="None"
+				image="Raytracing.JPG"
 			/>
 			<Card
 				href="https://astro.build/integrations/"
 				title="Integrations"
 				body="Supercharge your project with new frameworks and libraries."
-				image="IMG_1947.JPG"
+				image="Raytracing.JPG"
 			/>
 			<Card
 				href="https://astro.build/themes/"
 				title="Themes"
 				body="Explore a galaxy of community-built starter themes."
-				image="IMG_1947.JPG"
-			/>
+				image="Raytracing.JPG"
+				/>
 			<Card
 				href="https://astro.build/chat/"
 				title="Community"
 				body="Come say hi to our amazing Discord community. ❤️"
-				image="None"
-			/>
+				image="Raytracing.JPG"
+				/>
 		</div>
 	</main>
 </Layout>
@@ -54,11 +54,22 @@ import Card from '../components/Card.astro';
 		margin-bottom: 1em;
 	}
 	.project-grid {
+		max-width: 80%;
 		margin: 0 auto 6rem;
 		display: grid;
-		padding: 0 1rem;
+		padding: 1rem;
 		grid-template-columns: 1fr 1fr 1fr;
 		gap: 2rem;
+	}
+	@media screen  and (max-width: 1350px) {
+		.project-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+	@media screen and (max-width: 700px) {
+		.project-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
@@ -67,9 +78,7 @@ import Card from '../components/Card.astro';
 		background-size: 400%;
 		background-position: 0%;
 	}
-	/* Handles the grid layout for the projects
-	   TODO: Figure out how to get the grids to resize according to viewport size
-	*/
+	/* Handles the grid layout for the projects */
 	.welcome-message {
 		text-align: center;
 		line-height: 0rem;

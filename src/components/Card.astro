@@ -12,7 +12,7 @@ const { href, title, body, image } = Astro.props;
 <div class="link-card">
 	<a href={href}>
 		<div class="image-wrapper">
-			<img class="project-image" src="Raytracing.JPG"/>
+			<img class="project-image" src={image}/>
 		</div>
 		<div class="project-text">
 			<h2>
@@ -33,13 +33,11 @@ const { href, title, body, image } = Astro.props;
 	overflow: hidden;
 		display: flex;
 		width: 100%;
-		max-width: (100% - 2rem);
 		height: auto;
 		border-radius: 7px;
 		transition: all 0.3s ease-in-out;
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 		mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
-		object-fit: cover;
 	}
 	.link-card {
 		position: relative;
